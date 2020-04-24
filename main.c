@@ -25,6 +25,7 @@ void plusminus(int difficulty){
   int max = 100;
   int mystery_number = 0;
   int guess = 0;
+  int counter = 0;
 
   switch (difficulty) {
     case 1 :
@@ -36,11 +37,11 @@ void plusminus(int difficulty){
       break;
 
     case 3 :
-      max = 200;
+      max = 1000;
       break;
 
     case 4 :
-      max = 500;
+      max = 10000;
       break;
 
     case 0 :
@@ -65,14 +66,17 @@ void plusminus(int difficulty){
     else if (guess < mystery_number)
       {
         printf("+\n");
+        counter++;
       }
     else if (guess > mystery_number)
       {
         printf("-\n");
+        counter++;
       }
 
   } while(guess != mystery_number);
   printf("Well done, it was indeed %d\n", mystery_number );
+  printf("And you only took %d turns !\n", counter);
 }
 
 int menu(void){
