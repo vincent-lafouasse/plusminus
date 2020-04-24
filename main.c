@@ -4,28 +4,27 @@
 #include <time.h>
 
 int menu(void);
-void plusmoins(int difficulty);
+void plusminus(int difficulty);
 
 int main(int argc, char const *argv[]) {
   int play_again = 1;
-  /*int difficulty = 2;*/
   srand(time(NULL));
 
   printf("Welcome to plusminus !\n");
 
   do {
-    plusmoins(menu());
+    plusminus(menu());
     printf(" Press 1 to play again, otherwhise press 0\n");
     scanf("%d", &play_again );
   }while(play_again);
   return 0;
 }
 
-void plusmoins(int difficulty){
+void plusminus(int difficulty){
   const int MIN = 1;
-  int max = 100; /* Donne les bornes pour le nombre à deviner */
-  int nombreMystere = 0; /* Le nombre à deviner */
-  int devine = 0; /* La tentative pour trouver nombreMystere */
+  int max = 100;
+  int mystery_number = 0;
+  int guess = 0;
 
   switch (difficulty) {
     case 1 :
@@ -51,29 +50,29 @@ void plusmoins(int difficulty){
       break;
   }
 
-  nombreMystere = (rand() % (max - MIN + 1)) + MIN; /* Genere le nombre à deviner */
+  mystery_number = (rand() % (max - MIN + 1)) + MIN; /* Generates a random mystery_number */
 
   printf("%d\n", max);
 
   do {
-    scanf("%d",&devine);
+    scanf("%d",&guess);
 
-    if (devine < MIN || devine > max)
+    if (guess < MIN || guess > max)
       {
-        printf("Ce nombre est en dehors des bornes, reessayez donc. \n");
+        printf("This number is not valid, please try again.\n");
       }
 
-    else if (devine < nombreMystere)
+    else if (guess < mystery_number)
       {
         printf("+\n");
       }
-    else if (devine > nombreMystere)
+    else if (guess > mystery_number)
       {
         printf("-\n");
       }
 
-  } while(devine != nombreMystere);
-  printf("Bien ouej, c'etait bien %d\n", nombreMystere );
+  } while(guess != mystery_number);
+  printf("Well done, it was indeed %d\n", mystery_number );
 }
 
 int menu(void){
