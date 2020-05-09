@@ -1,17 +1,31 @@
-TOC
+# Plusminus
 
-Installation
+A beginner project in C89 from the first chapter of the C track by [Openclassrooms](https://openclassrooms.com/) (aka Le site du zéro). You may find it [here](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/14828-tp-plus-ou-moins-votre-premier-jeu) and [here](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/6760501-entrainez-vous-a-ameliorer-le-jeu-du-plus-ou-moins) (in French).
 
-Usage
+### Use
 
-Contributing
+Clone this repository and use the command `$ make` to create the executable `plusminus`.
 
-Credits
+Play the game by using the command `$ ./plusminus`.
 
-License
+### Rules
 
-  DO WHAT THE FUCK YOU WANT
+At some point I guess, right now I can't be bothered.
 
-Future features :
+#### License
 
-- A more developped user interface, including a verbose mode
+```
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+```
