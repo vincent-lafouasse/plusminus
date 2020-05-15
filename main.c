@@ -16,6 +16,7 @@ int main(void) {
 		plusminus(difficulty_choice());
 		printf("\nPress 1 to play again, otherwhise press 0\n");
 		scanf("%d", &play_again );
+		printf("\n");
 	}while(play_again);
 
 	printf("Thank you !\n");
