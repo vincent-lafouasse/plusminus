@@ -1,14 +1,22 @@
-CFLAGS= -W -Wall -ansi -pedantic
 
-all: plusminus
+CC = gcc
+CFLAGS= -std=c89
+CFLAGS += -W
+CFLAGS += -Wall
+CFLAGS += -pedantic
+EXEC = plusminus
+
+all: $(EXEC)
 
 plusminus: main.c
-	gcc -o plusminus main.c $(CFLAGS)
+	$(CC) -o $(EXEC) $^ $(CFLAGS)
+
+# $^ represents all dependancies, here it's main.c
 
 clean:
 	rm -rf *.o
 
 mrproper: clean
-	rm -rf plusminus
+	rm -rf $(EXEC)
 
 .PHONY: all clean mrproper
