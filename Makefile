@@ -1,4 +1,3 @@
-
 CC = gcc
 CFLAGS= -std=c89
 CFLAGS += -W
