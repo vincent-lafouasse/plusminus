@@ -3,11 +3,13 @@
 #include <math.h>
 #include <time.h>
 
-int difficulty_choice(void);
-void plusminus(int max);
+int		difficulty_choice(void);
+void		plusminus (int max);
 
-int main(void) {
-	int play_again = 1;
+int
+main(void)
+{
+	int		play_again = 1;
 	srand(time(NULL));
 
 	printf(" == Welcome to plusminus ! == \n\n");
@@ -15,42 +17,38 @@ int main(void) {
 	do {
 		plusminus(difficulty_choice());
 		printf("\nPress 1 to play again, otherwhise press 0\n");
-		scanf("%d", &play_again );
+		scanf("%d", &play_again);
 		printf("\n");
-	}while(play_again);
+	} while (play_again);
 
 	printf("Thank you !\n");
 	return 0;
 }
 
-void plusminus(int max){
-	const int MIN = 1;
-	int mystery_number = 0;
-	int guess = 0;
-	int counter = 0;
+void
+plusminus(int max)
+{
+	const int	MIN = 1;
+	int		mystery_number = 0;
+	int		guess = 0;
+	int		counter = 0;
 
-	mystery_number = (rand() % (max - MIN + 1)) + MIN; /* Generates a random mystery_number */
+	mystery_number = (rand() % (max - MIN + 1)) + MIN;
+	/* Generates a random number between max and MIN */
 
 	do {
-		scanf("%d",&guess);
+		scanf("%d", &guess);
 
-		if (guess < MIN || guess > max)
-		{
+		if (guess < MIN || guess > max) {
 			printf("This number is not valid, please try again.\n");
-		}
-
-		else if (guess < mystery_number)
-		{
+		} else if (guess < mystery_number) {
 			printf("(+) The mystery number is greater than that\n\n");
 			counter++;
-		}
-		else if (guess > mystery_number)
-		{
+		} else if (guess > mystery_number) {
 			printf("(-) The mystery number is lower than that\n\n");
 			counter++;
 		}
-
-	} while(guess != mystery_number);
+	} while (guess != mystery_number);
 	counter++;
 
 	printf("\n");
@@ -58,9 +56,11 @@ void plusminus(int max){
 	printf("And you only took %d turns !\n\n", counter);
 }
 
-int difficulty_choice(void){
-	int difficulty = 2;
-	int max[] = {1, 50, 100, 1000, 10000};
+int
+difficulty_choice(void)
+{
+	int		difficulty = 2;
+	int		max        [] = {1, 50, 100, 1000, 10000};
 
 	printf("What difficulty setting do you choose ?\n");
 	printf("1. chill \n");
@@ -71,11 +71,10 @@ int difficulty_choice(void){
 	scanf("%d", &difficulty);
 	printf("\n");
 
-	if (difficulty == 0 ){
+	if (difficulty == 0) {
 		printf("You have unlocked the hidden difficulty setting.\n");
 		printf("Be prepared for an exciting game.\n\n");
 	}
-
 	printf("To win at plusminus, you will have to guess a number.\n");
 	printf("This number has been randomly selected between 1 and %d.\n\n", max[difficulty]);
 	printf("Good luck !\n\n");
