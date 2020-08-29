@@ -7,8 +7,11 @@ EXEC = plusminus
 
 all: $(EXEC)
 
-plusminus: main.c
+plusminus: main.o
 	$(CC) -o $(EXEC) $^ $(CFLAGS)
+
+main.o: main.c
+	$(CC) -o main.o -c $^ $(CFLAGS)
 
 # $^ represents all dependancies, here it's main.c
 
