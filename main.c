@@ -78,6 +78,7 @@ difficulty_choice(void)
 	printf("To win at plusminus, you will have to guess a number.\n");
 	printf("This number has been randomly selected between 1 and %d.\n\n", max[difficulty]);
 	printf("Good luck !\n\n");
+	printf("What's your guess ?\n\n");
 
 	return max[difficulty];
 
