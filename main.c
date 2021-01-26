@@ -65,7 +65,7 @@ difficulty_choice(void)
 	printf("What difficulty setting do you choose ?\n");
 	printf("1. chill \n");
 	printf("2. standard \n");
-	printf("3. kinda hard i guess\n");
+	printf("3. annoying\n");
 	printf("4. i wouldnt do this\n\n");
 
 	scanf("%d", &difficulty);
